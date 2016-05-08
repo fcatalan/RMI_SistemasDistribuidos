@@ -1,0 +1,20 @@
+INDEX VERSION 1.126+C:\Users\Fabian Catalan\Desktop\Proyectos Desarrollo\Git\RMI_SistemasDistribuidos\.metadata\.plugins\org.eclipse.jdt.core
+2236950488.index
+3822722766.index
+30413436.index
+110710023.index
+783145732.index
+3421717390.index
+3506792337.index
+2212350045.index
+188470173.index
+1442180275.index
+3018834394.index
+1053831942.index
+2404869479.index
+350734755.index
+3491378290.index
+1702929220.index
+2022656900.index
+1673472169.index
+4294407954.index
