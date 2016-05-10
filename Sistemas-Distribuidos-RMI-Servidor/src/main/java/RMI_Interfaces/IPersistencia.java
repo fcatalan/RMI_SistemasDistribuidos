@@ -9,5 +9,5 @@ public interface IPersistencia extends Remote {
 	public Boolean update(Object obj) throws RemoteException;
 	public Boolean eliminar(Object obj) throws RemoteException;
 	public ArrayList<Object> listar(Object obj) throws RemoteException;
-	public ArrayList<Object> listar() throws RemoteException;
+	public ArrayList<Object> listarAll() throws RemoteException;
 }

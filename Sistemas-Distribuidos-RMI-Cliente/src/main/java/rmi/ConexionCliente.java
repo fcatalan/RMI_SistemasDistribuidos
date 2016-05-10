@@ -41,7 +41,7 @@ public class ConexionCliente {
 	            //Vamos al Registry y miramos los Objeto que hay en "nombreObjRemoto" para poder usarlo.
 	            if (nombreObjetoRemoto.equals("UsuarioRemoto")) {
 	                usuario = (ISesion) registry.lookup(nombreObjetoRemoto);
-	            } else if (nombreObjetoRemoto.equals("TableroRemoto")) {
+	            } else if (nombreObjetoRemoto.equals("ClienteRemoto")) {
 	                cliente = (IPersistencia) registry.lookup(nombreObjetoRemoto);
 	            }
 

@@ -35,7 +35,7 @@ public class VentaImpl extends UnicastRemoteObject  implements IPersistencia {
 		return null;
 	}
 
-	public ArrayList<Object> listar() {
+	public ArrayList<Object> listarAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

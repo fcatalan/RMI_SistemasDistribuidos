@@ -39,11 +39,24 @@ public class UsuarioImpl extends UnicastRemoteObject  implements IPersistencia, 
 	}
 
 	public Boolean iniciarSesion(Usuario usuario) {		
-		String sql = "SELECT * FROM persona where nombre = '" + usuario.getNombreUsuario() + "' and contrasena = '" + usuario.getContrasena() + "';";
+		String sql = "SELECT * FROM usuario where nombre = '" + usuario.getNombreUsuario() + "' and contrasena = '" + usuario.getContrasena() + "';";
 		ConexionPostgrest con = new ConexionPostgrest();		
 		ResultSet rs = con.conexion(sql);
 		try{
-			return rs.first();
+			System.out.println(usuario.getNombreUsuario());
+			System.out.println(usuario.getContrasena());
+			
+			String usu = "";
+						
+			while(rs.next()){
+				usu = rs.getString(3);
+			}
+						
+			if(usu.equals(usuario.getNombreUsuario()))
+				return true;
+			else
+				return false;				
+			
 		}catch (SQLException e) {
 			// TODO: handle exception
 			System.out.print(e.getMessage());
@@ -59,7 +72,7 @@ public class UsuarioImpl extends UnicastRemoteObject  implements IPersistencia, 
 		return null;
 	}
 
-	public ArrayList<Object> listar() {
+	public ArrayList<Object> listarAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

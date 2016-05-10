@@ -56,6 +56,7 @@ public class ServidorRMI {
                 registro.rebind(nombre, (ISesion) objeto);
             }
             else if (nombreClase.equals("ClienteImpl")){
+            	System.out.println("cliente");
                 logger.log(Level.INFO, "Se agregara ".concat(nombre).concat(" con el objecto Cliente"));
                 registro.rebind(nombre, (IPersistencia) objeto);
             }
