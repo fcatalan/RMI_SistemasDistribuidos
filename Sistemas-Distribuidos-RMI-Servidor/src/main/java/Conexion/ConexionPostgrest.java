@@ -9,8 +9,11 @@ import java.sql.Statement;
 
 public class ConexionPostgrest {
 
-	public static void conexion(){
+	public ResultSet conexion(String sql){
 		String clave= "8764h758";
+		
+		ResultSet rs = null;
+		
 		try {
 			//CLASE USADA PARA EL DRIVER
 			Class.forName("org.postgresql.Driver");
@@ -20,21 +23,22 @@ public class ConexionPostgrest {
 			Connection cn= DriverManager.getConnection(url,"postgres",clave);
 			//TRAE LOS DATOS
 			Statement st = cn.createStatement();
-			//SELECCIONA LA TABLA
-			String sql="SELECT * FROM persona ";
-			ResultSet rs = st.executeQuery(sql);
-			//LLAMA AL MÉTODO
-			listar(rs);
-			
+			//SELECCIONA LA TABLA			
+			rs = st.executeQuery(sql);			
 		} catch (ClassNotFoundException ex) {
 			// TODO: handle exception
 			System.out.print("Error en el Driver");
+			
 		}catch (SQLException e) {
 			// TODO: handle exception
 			System.out.print(e.getMessage());
+			
 		}
+		return rs;
 	}
 	
+
+	/*
 	private static void listar(ResultSet rs) throws SQLException{
 		// TODO Auto-generated method stub
 		System.out.print("");
@@ -50,8 +54,22 @@ public class ConexionPostgrest {
 			System.out.println("nombre: "+rs.getString(2)+"\t");
 		}
 	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		conexion();
+		
+		String sql="SELECT * FROM persona ";
+		
+		ResultSet rs = conexion(sql);
+		try{
+			listar(rs);
+		}catch (SQLException e) {
+			// TODO: handle exception
+			System.out.print(e.getMessage());
+			
+		}
 	}
+	*/
+	
 }
