@@ -48,10 +48,12 @@ public class ClienteImpl extends UnicastRemoteObject  implements IPersistencia {
 		ResultSet rs = con.conexion(sql);	
 		
 		try{
-			Cliente cli = new Cliente();
+			
 			ArrayList<Object> listaCliente = new ArrayList<Object>();
 
 			while(rs.next()){
+				Cliente cli = new Cliente();
+				
 				cli.setId(rs.getInt(1));
 				cli.setCodigo(rs.getString(3));
 				cli.setNombre(rs.getString(5));
