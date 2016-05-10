@@ -43,9 +43,7 @@ public class UsuarioImpl extends UnicastRemoteObject  implements IPersistencia, 
 		ConexionPostgrest con = new ConexionPostgrest();		
 		ResultSet rs = con.conexion(sql);
 		try{
-			System.out.println(usuario.getNombreUsuario());
-			System.out.println(usuario.getContrasena());
-			
+				
 			String usu = "";
 						
 			while(rs.next()){

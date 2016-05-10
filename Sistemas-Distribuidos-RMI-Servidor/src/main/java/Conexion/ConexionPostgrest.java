@@ -19,17 +19,20 @@ public class ConexionPostgrest{
 		try {
 			//CLASE USADA PARA EL DRIVER
 			Class.forName("org.postgresql.Driver");
+			
 			//RUTA DE LA BASE DE DATOS
 			String  url="jdbc:postgresql://localhost:5432/sistemaDistribuido";
+			
 			//CONECCION A LA BASE DE DATOS
 			Connection cn= DriverManager.getConnection(url,"postgres",clave);
+			
 			//TRAE LOS DATOS
 			Statement st = cn.createStatement();
-			//SELECCIONA LA TABLA			
+						
 			rs = st.executeQuery(sql);			
 		} catch (ClassNotFoundException ex) {
 			// TODO: handle exception
-			System.out.print("Error en el Driver");
+			System.out.print("Error en la conexión con la base de datos");
 			
 		}catch (SQLException e) {
 			// TODO: handle exception
@@ -41,6 +44,7 @@ public class ConexionPostgrest{
 	
 
 	/*
+	 * Pruebas.
 	private static void listar(ResultSet rs) throws SQLException{
 		// TODO Auto-generated method stub
 		System.out.print("");

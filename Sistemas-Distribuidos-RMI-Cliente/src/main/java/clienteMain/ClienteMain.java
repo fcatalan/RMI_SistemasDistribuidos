@@ -9,10 +9,10 @@ import RMI_Interfaces.*;
 
 public class ClienteMain {
 	
-    public static int Puerto = 2014;                            //Número del puerto que está alojado el servidor
-    public static String IPServer = "localhost";                //Dirección IP del servidor, la cual podría utilizarse por defecto el localhost
-    public static String usuarioRefRemoto = "UsuarioRemoto";    // Nombre del objeto subido
-    public static String clienteRefRemota = "ClienteRemoto";    // Nombre del objeto subido
+    public static int Puerto = 2014;
+    public static String IPServer = "localhost";                
+    public static String usuarioRefRemoto = "UsuarioRemoto";    
+    public static String clienteRefRemota = "ClienteRemoto";    
     
     
     public ClienteMain() {
@@ -46,11 +46,12 @@ public class ClienteMain {
     			
     			for(Object cli : lsCliente){    				
     				Cliente c =	  (Cliente)cli;
-    				System.out.println(c.getNombre());
-    			}    			
+    				System.out.println("Cliente: " +c.getNombre() + " " + c.getApellidoPaterno() + " " + c.getApellidoMaterno() );
+    			}	
     		}else
-    			System.out.println("El usuario o la contraseña son invalido");
-    		
+    			System.out.println("El usuario o la contraseña son invalido.");    		
+    	   }else{
+    		   System.out.println("No se pudo realizar la conexión con el servidor.");   
     	   }
        }catch(Exception e){
     	   System.out.println(e);

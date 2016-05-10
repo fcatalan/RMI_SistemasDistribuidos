@@ -7,9 +7,9 @@ Proyectos del ramo de sistemas distribuidos
 insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Fabian', 'Catalan', 'Chavez');
 insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Nivaldo', 'Perot', 'Quezada');
 
-insert into usuario (nombre, contrasena, idPersona)values('fcatalan', '12345', 3);
+insert into usuario (nombre, contrasena, idPersona)values('fcatalan', '12345', 1);
 
-insert into cliente (idPersona, codigoCliente)values(4, 'cli1');
+insert into cliente (idPersona, codigoCliente)values(2, 'cli1');
 
 insert into productos (nombre, codigo)values('computador', 'pro1');
 
