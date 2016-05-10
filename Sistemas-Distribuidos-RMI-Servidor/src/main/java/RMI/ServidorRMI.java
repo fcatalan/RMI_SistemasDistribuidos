@@ -8,6 +8,7 @@ import java.rmi.registry.Registry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import RMI_Interfaces.IPersistencia;
 import RMI_Interfaces.ISesion;
 
 public class ServidorRMI {
@@ -46,23 +47,20 @@ public class ServidorRMI {
         try {
             this.registro = getRegistro(Puerto);
 
-            //Para poder realizar el objeto remoto, deberá estar en el Registry
-            //del servidor, por lo que con el método rebind quedará registrado
-            //con el nombre de referencia del objeto y el objeto inicializado
-            //que entró por parámetro
-                        
-            /*
+            String nombreClase = objeto.getClass().getSimpleName().toString();
+            
             //Es importante analizar que se casteará que tipo de implementación es que la está entrando
-            if (objeto.getClass().equals(ImplementacionUsuario.class)){
+            if (nombreClase.equals("UsuarioImpl")){
                 logger.log(Level.INFO, "Se agregara ".concat(nombre).concat(" con el objecto Usuario"));
                 //De tal manera que aquí se castee la interface que le corresponde
-                registro.rebind(nombre, (Usuario) objeto);
+                registro.rebind(nombre, (ISesion) objeto);
             }
-            else if (objeto.getClass().equals(ImplementacionTablero.class)){
-                logger.log(Level.INFO, "Se agregara ".concat(nombre).concat(" con el objecto Tablero"));
-                registro.rebind(nombre, (Tablero) objeto);
+            else if (nombreClase.equals("ClienteImpl")){
+                logger.log(Level.INFO, "Se agregara ".concat(nombre).concat(" con el objecto Cliente"));
+                registro.rebind(nombre, (IPersistencia) objeto);
             }
-            */
+            
+            
             //Nota: Esto también se podría realizar de otra manera, debido que 
             //se podrían implementar dos interfaces a la misma implementación.
             //De ser así, esta forma no serviría, debido que aquí estamos

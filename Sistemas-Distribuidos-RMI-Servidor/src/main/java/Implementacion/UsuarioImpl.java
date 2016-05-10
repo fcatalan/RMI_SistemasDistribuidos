@@ -1,6 +1,8 @@
 package Implementacion;
 
 import java.lang.reflect.Array;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -10,7 +12,17 @@ import Conexion.*;
 import DTO.Usuario;
 import RMI_Interfaces.*;
 
-public class UsuarioImpl implements IPersistencia, ISesion {
+public class UsuarioImpl extends UnicastRemoteObject  implements IPersistencia, ISesion {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public UsuarioImpl() throws RemoteException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public Object consultar(Object obj) {
 		// TODO Auto-generated method stub
@@ -45,6 +57,11 @@ public class UsuarioImpl implements IPersistencia, ISesion {
 	}
 	
 	public ArrayList<Object> listar(Object obj) {
+		return null;
+	}
+
+	public ArrayList<Object> listar() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 	

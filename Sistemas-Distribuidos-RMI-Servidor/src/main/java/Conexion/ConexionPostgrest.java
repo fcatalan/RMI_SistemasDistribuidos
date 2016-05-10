@@ -1,5 +1,6 @@
 package Conexion;
 
+import java.rmi.RemoteException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,7 +8,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ConexionPostgrest {
+
+public class ConexionPostgrest{
 
 	public ResultSet conexion(String sql){
 		String clave= "8764h758";
@@ -54,22 +56,18 @@ public class ConexionPostgrest {
 			System.out.println("nombre: "+rs.getString(2)+"\t");
 		}
 	}
-	
-	
+	*/
+	/*
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		String sql="SELECT * FROM persona ";
 		
 		ResultSet rs = conexion(sql);
-		try{
-			listar(rs);
-		}catch (SQLException e) {
-			// TODO: handle exception
-			System.out.print(e.getMessage());
-			
-		}
+		Object c = new ConexionPostgrest();
+		
+		
+		System.out.println(c.getClass());
 	}
-	*/
-	
+	*/	
 }
