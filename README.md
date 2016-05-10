@@ -83,7 +83,7 @@ alter table VENTA
 # Primer insert
 
 insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Fabian', 'Catalan', 'Chavez');
-insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Nivaldo', 'Perot', 'Quezada');
+insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Nibaldo', 'Perot', 'Quevedo');
 insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Santiago', 'Catalan', 'Herrera');
 
 insert into usuario (nombre, contrasena, idPersona)values('fcatalan', '12345', 1);

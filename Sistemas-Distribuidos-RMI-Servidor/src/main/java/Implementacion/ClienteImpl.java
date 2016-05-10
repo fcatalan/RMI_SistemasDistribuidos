@@ -43,7 +43,7 @@ public class ClienteImpl extends UnicastRemoteObject  implements IPersistencia {
 
 	public ArrayList<Object> listarAll() {
 		String sql = "SELECT * FROM cliente c INNER JOIN persona p ON (c.idPersona = p.idPersona);";
-		System.out.println("Listar cliente");
+		//System.out.println("Listar cliente");
 		ConexionPostgrest con = new ConexionPostgrest();
 		ResultSet rs = con.conexion(sql);	
 		
@@ -60,7 +60,6 @@ public class ClienteImpl extends UnicastRemoteObject  implements IPersistencia {
 				cli.setApellidoPaterno(rs.getString(6));
 				cli.setApellidoMaterno(rs.getString(7));
 				listaCliente.add(cli);
-				System.out.println(cli.getNombre());
 			}
 			return listaCliente;
 			
