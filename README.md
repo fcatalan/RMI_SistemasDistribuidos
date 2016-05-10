@@ -80,7 +80,7 @@ alter table VENTA
 
 	  
 	  
-# Primer inser
+# Primer insert
 
 insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Fabian', 'Catalan', 'Chavez');
 insert into persona (nombre, apellidoPaterno, apellidoMaterno) values('Nivaldo', 'Perot', 'Quezada');
